@@ -1,5 +1,6 @@
 @import './alignments.css';
 @import './Fonts/fonts.css';
+@import './colors.css';
 
 *{
   margin: 0;
