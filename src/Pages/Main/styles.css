@@ -1,5 +1,4 @@
 header{
-  background-color: var(--black);
   width: 100%;
   height: 10vh;
 }
@@ -23,7 +22,6 @@ header .logo{
 header .nav{
   width: 30rem;
   color: var(--smokeWhite);
-  font-family: 'Netflix Sans Medium';
   margin-left: 4%;
 }
 
