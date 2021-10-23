@@ -4,32 +4,41 @@ header{
   height: 10vh;
 }
 
-header .container{
-  height: inherit;
+header .left, .right{
+  width: 50%;
+  gap: 1.5rem
 }
 
-header .left{
-  width: 50%;
+header .container{
+  height: inherit;
+  margin: 0 3%;
 }
 
 header .logo{
   color: var(--red);
   font-family: 'Netflix Sans Icon';
   font-size: 1.5rem;
-  font-variant: small-caps;
 }
 
 header .nav{
   width: 30rem;
   color: var(--smokeWhite);
   font-family: 'Netflix Sans Medium';
+  margin-left: 4%;
 }
 
 header .nav span{
   cursor: pointer;
 }
 
-header .effect{
-  font-size: 1.8rem;
+header .right{
+  color: var(--white);
 }
 
+header .user-image{
+  width: 8%;
+  height: 6vh;
+  background-image: url('../../assets/default-user-image.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}

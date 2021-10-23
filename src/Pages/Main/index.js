@@ -1,13 +1,13 @@
 import React from 'react';
 import './styles.css';
-
-import './styles.css';
+import { FaSearch, FaRegBell } from "react-icons/fa";
 
 function App() {
   return (
     <div className="App">
       <header className="header">
-        <div className='container flex-row content-center items-center'>
+        <div className='container flex-row content-between items-center'>
+
           <div className='left flex-row content-between'>
             <div className='logo'>
               <h3>NIMEFLIX</h3>
@@ -16,13 +16,16 @@ function App() {
               <span>Inicio</span>
               <span>Séries</span>
               <span>Filmes</span>
-              <span>Adicionados recentementes</span>
-              <span>Minha Lista</span>
             </div>
           </div>
-          <div className='right' >
 
+          <div className='right flex-row items-center content-end' >
+            <FaSearch />
+            <span>User</span>
+            <FaRegBell />
+            <div className='user-image'></div>
           </div>
+
         </div>
       </header>
     </div>
