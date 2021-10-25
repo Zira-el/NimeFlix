@@ -3,7 +3,8 @@
     --black: #141414;
     --black50: rgba(0,0,0,.50);
     --gray: #808080;
-    --midGray: rgba(109, 109, 110, 0.7);
+    --midGray: rgba(109, 109, 110, 0.5);
+    --gray90: rgba(109, 109, 110, 0.9);
     --smokeWhite: #E5E5E5;
     --white30: rgba(255, 255, 255, 0.3);
     --white: #FFFFFF

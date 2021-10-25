@@ -1,6 +1,8 @@
 import React from 'react';
 import './styles.css';
 import { FaSearch, FaRegBell, FaPlay } from "react-icons/fa";
+import ReactPlayer from 'react-player'
+
 
 function App() {
   return (
@@ -30,6 +32,20 @@ function App() {
 
       <main>
         <section className='highlights'>
+          
+          <div className='flex-row content-end'>
+            <ReactPlayer 
+            className='demo'
+            url={'https://www.youtube.com/embed/3snByVaQUF0?enablejsapi=1&wmode=opaque&autoplay=1'}
+            playing={true}
+            muted={true}
+            width='cover'
+            height='80vh'
+            left='auto'
+            />
+          </div>
+        
+
           <div className='container-info flex-column content-center items-start'>
             <h1 className='title'>Dragon Ball</h1>
             <span className='info'>Informações do anime</span>
