@@ -1,3 +1,5 @@
+/* Header */
+
 header{
   width: 100%;
   height: 10vh;
@@ -39,4 +41,50 @@ header .user-image{
   background-image: url('../../assets/default-user-image.png');
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+/* Highlights */
+
+section .highlights{
+  width: 100%;
+  height: 60vh;
+}
+
+section .container-info{
+  width: 50%;
+  height: 60vh;
+  margin-left: 3%;
+}
+
+section h1.title{
+  font-family: 'Netflix Sans Bold';
+  font-size: 4em;
+  color: var(--white)
+}
+
+section span.info{
+  font-size: 1.5em;
+  color: var(--white);
+}
+
+section button{
+  background-color: var(--black50);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 3% 12%;
+  margin-top: 3%;
+  color: var(--white);
+  font-size: 1.2em;
+  font-family: 'Netflix Sans Regular';
+  cursor: pointer;
+}
+
+section button .margin{
+  margin-right: 10px;
+}
+
+section button:hover{
+  border: 1px solid var(--white30);
+  background-color: var(--midGray);
+  transition: .3s ease all;
 }
