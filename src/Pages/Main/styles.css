@@ -130,3 +130,13 @@ section button.steps:hover{
   color: var(--white);
   transition: .3s ease all;
 }
+
+.slide-out{
+  opacity: 0;
+  transition: ease-out .5s;
+}
+
+.slide-in{
+  opacity: 1;
+  transition: ease-in .5s;
+}

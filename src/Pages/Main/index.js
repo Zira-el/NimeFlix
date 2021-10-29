@@ -60,7 +60,7 @@ function App() {
         <section className='highlights'>
 
           {topAnimes.map((anime, index) => (
-            <div>
+            <div className={index === current ? 'slide-in' : 'slide-out'}>
               {index === current && (
                 <div>
                   <div className='flex-row content-end'>
@@ -97,7 +97,7 @@ function App() {
                     >
                       <FaStepForward />
                     </button>
-                    
+
                 </div> 
               </div>
               )}
