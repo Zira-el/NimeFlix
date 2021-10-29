@@ -7,5 +7,6 @@
     --gray90: rgba(109, 109, 110, 0.9);
     --smokeWhite: #E5E5E5;
     --white30: rgba(255, 255, 255, 0.3);
-    --white: #FFFFFF
+    --white: #FFFFFF;
+    --white10: rgba(255, 255, 255, 0.1)
 }

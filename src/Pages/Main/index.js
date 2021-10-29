@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
-import { FaSearch, FaRegBell, FaPlay } from "react-icons/fa";
+import { FaSearch, FaRegBell, FaPlay, FaStepBackward, FaStepForward } from "react-icons/fa";
 import ReactPlayer from 'react-player';
 import { getTopAnimes } from '../../Services/jikan';
 
@@ -67,14 +67,22 @@ function App() {
             />
           </div>
         
-          <div className='container-info flex-column content-center items-start'>
-            <h1 className='title'>{topAnimes[current].title}</h1>
-            <span className='info'>{topAnimes[current].synopsis.substring(0, 150).concat('...')}</span>
-            <button type='button' className='flex-row items-center' >
-              <FaPlay className='margin'/>
-              ASSISTIR AGORA
+            <div className='container-info flex-row items-center'>
+              <button type='button' className='steps left'>
+                <FaStepBackward />
               </button>
-          </div>
+              <div className='flex-column content-center items-start texts-info'>
+                <h1 className='title'>{topAnimes[current].title}</h1>
+                <span className='info'>{topAnimes[current].synopsis.substring(0, 150).concat('...')}</span>
+                <button type='button' className='flex-row items-center play' >
+                  <FaPlay className='margin-button'/>
+                  ASSISTIR AGORA
+                </button>
+              </div>
+              <button type='button' className='steps right'>
+                <FaStepForward />
+              </button>
+          </div> 
         </section>
       </main>
     </div>
