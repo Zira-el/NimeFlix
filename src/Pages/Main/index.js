@@ -94,8 +94,8 @@ function App() {
                 <FaStepBackward />
               </button>
               <div className='flex-column content-center items-start texts-info'>
-                <h1 className='title'>{topAnimes[current].title}</h1>
-                <span className='info'>{topAnimes[current].synopsis.substring(0, 150).concat('...')}</span>
+                <h1 className='title'>{topAnimes[current].title.length <= 20 ? topAnimes[current].title : topAnimes[current].title.substring(0,30).concat('...')}</h1>
+                <span className='info'>{topAnimes[current].synopsis.length <= 150 ? topAnimes[current].synopsis : topAnimes[current].synopsis.substring(0, 150).concat('...')}</span>
                 <button type='button' className='flex-row items-center play' >
                   <FaPlay className='margin-button'/>
                   ASSISTIR AGORA
