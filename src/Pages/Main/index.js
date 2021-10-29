@@ -24,32 +24,16 @@ function App() {
   }, []);
 
   function handleNext(){
-    if (current < 4){
-      setCurrent(current + 1);
-      return
-    }
-
-    else {
-      setCurrent(0);
-      return
-    }
+    setCurrent(topAnimes.length === current + 1 ? 0 : current + 1);
+    return
   }
 
   function handleBack(){
-    if (current > 0){
-      setCurrent(current - 1);
-      return
-    }
-
-    else {
-      setCurrent(4);
-      return
-    }
+    setCurrent(current === 0 ? topAnimes.length - 1 : current - 1);
   }
 
   return (
     <div className="App">
-
       <header className="header">
         <div className='container flex-row content-between items-center'>
           <div className='left flex-row content-between'>
@@ -74,40 +58,54 @@ function App() {
 
       <main>
         <section className='highlights'>
-          
-          <div className='flex-row content-end'>
-            <ReactPlayer 
-            className='videoTops'
-            url={topAnimes[current].trailer_url}
-            playing={true}
-            muted={true}
-            width='cover'
-            height='cover'
-            />
-          </div>
-        
-            <div className='container-info flex-row items-center'>
-              <button type='button' 
-                className='steps left'
-                onClick={() => handleBack()}  
-              >
-                <FaStepBackward />
-              </button>
-              <div className='flex-column content-center items-start texts-info'>
-                <h1 className='title'>{topAnimes[current].title.length <= 20 ? topAnimes[current].title : topAnimes[current].title.substring(0,30).concat('...')}</h1>
-                <span className='info'>{topAnimes[current].synopsis.length <= 150 ? topAnimes[current].synopsis : topAnimes[current].synopsis.substring(0, 150).concat('...')}</span>
-                <button type='button' className='flex-row items-center play' >
-                  <FaPlay className='margin-button'/>
-                  ASSISTIR AGORA
-                </button>
+
+          {topAnimes.map((anime, index) => (
+            <div>
+              {index === current && (
+                <div>
+                  <div className='flex-row content-end'>
+                  <ReactPlayer 
+                  className='videoTops'
+                  url={anime.trailer_url}
+                  playing={true}
+                  muted={true}
+                  width='cover'
+                  height='cover'
+                  />
+                  </div>
+            
+                  <div className='container-info flex-row items-center'>
+                    <button type='button' 
+                      className='steps left'
+                      onClick={() => handleBack()}  
+                    >
+                      <FaStepBackward />
+                    </button>
+
+                    <div className='flex-column content-center items-start texts-info'>
+                      <h1 className='title'>{anime.title.length <= 20 ? anime.title : anime.title.substring(0,30).concat('...')}</h1>
+                      <span className='info'>{anime.synopsis.length <= 150 ? anime.synopsis : anime.synopsis.substring(0, 150).concat('...')}</span>
+                      <button type='button' className='flex-row items-center play' >
+                        <FaPlay className='margin-button'/>
+                        ASSISTIR AGORA
+                      </button>
+                    </div>
+
+                    <button type='button' 
+                      className='steps right'
+                      onClick={() => handleNext()}    
+                    >
+                      <FaStepForward />
+                    </button>
+                    
+                </div> 
               </div>
-              <button type='button' 
-                className='steps right'
-                onClick={() => handleNext()}    
-              >
-                <FaStepForward />
-              </button>
-          </div> 
+              )}
+            </div>
+          ))
+          }
+          
+          
         </section>
       </main>
     </div>
