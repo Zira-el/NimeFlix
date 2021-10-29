@@ -9,14 +9,15 @@ function App() {
   const [topAnimes, setTopAnimes] = useState([{
     title: '',
     synopsis: '',
-    trailer_url: ''
+    trailer_url: '',
+    img_url: ''
   }]);
   const [current, setCurrent] = useState(0);
 
   async function dadosAnime(){
     const data = await getTopAnimes();
+    console.log(data[current])
     setTopAnimes(data);
-    console.log(data);
   }
 
   useEffect(() => {
@@ -63,17 +64,21 @@ function App() {
             <div className={index === current ? 'slide-in' : 'slide-out'}>
               {index === current && (
                 <div>
+                 
                   <div className='flex-row content-end'>
-                  <ReactPlayer 
-                  className='videoTops'
-                  url={anime.trailer_url}
-                  playing={true}
-                  muted={true}
-                  width='cover'
-                  height='cover'
-                  />
+                  
+                    <ReactPlayer 
+                      className='videoTops'
+                      url={anime.trailer_url}
+                      playing={true}
+                      muted={true}
+                      width='cover'
+                      height='cover'
+                      onEnded = {() => handleNext()}
+                    />
+                  
                   </div>
-            
+
                   <div className='container-info flex-row items-center'>
                     <button type='button' 
                       className='steps left'
