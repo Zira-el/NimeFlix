@@ -4,11 +4,6 @@ import { FaSearch, FaRegBell, FaPlay, FaStepBackward, FaStepForward } from "reac
 import ReactPlayer from 'react-player';
 import { getTopAnimes } from '../../Services/jikan';
 
-const videos = [
-  'https://www.youtube.com/embed/l_98K4_6UQ0?enablejsapi=1&wmode=opaque&autoplay=1',
-  'https://www.youtube.com/embed/3snByVaQUF0?enablejsapi=1&wmode=opaque&autoplay=1',
-  'https://www.youtube.com/embed/j2hiC9BmJlQ?enablejsapi=1&wmode=opaque&autoplay=1'
-]
 
 function App() {
   const [topAnimes, setTopAnimes] = useState([{
@@ -27,6 +22,30 @@ function App() {
   useEffect(() => {
     dadosAnime();
   }, []);
+
+  function handleNext(){
+    if (current < 4){
+      setCurrent(current + 1);
+      return
+    }
+
+    else {
+      setCurrent(0);
+      return
+    }
+  }
+
+  function handleBack(){
+    if (current > 0){
+      setCurrent(current - 1);
+      return
+    }
+
+    else {
+      setCurrent(4);
+      return
+    }
+  }
 
   return (
     <div className="App">
@@ -68,7 +87,10 @@ function App() {
           </div>
         
             <div className='container-info flex-row items-center'>
-              <button type='button' className='steps left'>
+              <button type='button' 
+                className='steps left'
+                onClick={() => handleBack()}  
+              >
                 <FaStepBackward />
               </button>
               <div className='flex-column content-center items-start texts-info'>
@@ -79,7 +101,10 @@ function App() {
                   ASSISTIR AGORA
                 </button>
               </div>
-              <button type='button' className='steps right'>
+              <button type='button' 
+                className='steps right'
+                onClick={() => handleNext()}    
+              >
                 <FaStepForward />
               </button>
           </div> 
