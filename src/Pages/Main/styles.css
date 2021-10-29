@@ -71,6 +71,7 @@ section h1.title{
 section span.info{
   font-size: 1.5em;
   color: var(--white);
+  width: 60%;
 }
 
 section button{
@@ -95,7 +96,7 @@ section button:hover{
   transition: .3s ease all;
 }
 
-section .demo{
+section .videoTops{
   width: 70%;
   position: absolute;
   z-index: -1;

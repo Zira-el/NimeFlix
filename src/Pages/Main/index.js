@@ -11,10 +11,16 @@ const videos = [
 ]
 
 function App() {
+  const [topAnimes, setTopAnimes] = useState([{
+    title: '',
+    synopsis: '',
+    trailer_url: ''
+  }]);
   const [current, setCurrent] = useState(0);
 
   async function dadosAnime(){
     const data = await getTopAnimes();
+    setTopAnimes(data);
     console.log(data);
   }
 
@@ -52,8 +58,8 @@ function App() {
           
           <div className='flex-row content-end'>
             <ReactPlayer 
-            className='demo'
-            url={videos[current]}
+            className='videoTops'
+            url={topAnimes[current].trailer_url}
             playing={true}
             muted={true}
             width='cover'
@@ -62,8 +68,8 @@ function App() {
           </div>
         
           <div className='container-info flex-column content-center items-start'>
-            <h1 className='title'>Dragon Ball</h1>
-            <span className='info'>Informações do anime</span>
+            <h1 className='title'>{topAnimes[current].title}</h1>
+            <span className='info'>{topAnimes[current].synopsis.substring(0, 150).concat('...')}</span>
             <button type='button' className='flex-row items-center' >
               <FaPlay className='margin'/>
               ASSISTIR AGORA
