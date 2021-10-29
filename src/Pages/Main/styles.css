@@ -99,7 +99,6 @@ section .demo{
   width: 70%;
   position: absolute;
   z-index: -1;
-  height: 79vh;
-  right: auto;
+  height: 80vh;
 }
 

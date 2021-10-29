@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './styles.css';
 import { FaSearch, FaRegBell, FaPlay } from "react-icons/fa";
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
+import { getTopAnimes } from '../../Services/jikan';
 
+const videos = [
+  'https://www.youtube.com/embed/l_98K4_6UQ0?enablejsapi=1&wmode=opaque&autoplay=1',
+  'https://www.youtube.com/embed/3snByVaQUF0?enablejsapi=1&wmode=opaque&autoplay=1',
+  'https://www.youtube.com/embed/j2hiC9BmJlQ?enablejsapi=1&wmode=opaque&autoplay=1'
+]
 
 function App() {
+  const [current, setCurrent] = useState(0);
+
+  async function dadosAnime(){
+    const data = await getTopAnimes();
+    console.log(data);
+  }
+
+  useEffect(() => {
+    dadosAnime();
+  }, []);
+
   return (
     <div className="App">
 
@@ -36,16 +53,14 @@ function App() {
           <div className='flex-row content-end'>
             <ReactPlayer 
             className='demo'
-            url={'https://www.youtube.com/embed/3snByVaQUF0?enablejsapi=1&wmode=opaque&autoplay=1'}
+            url={videos[current]}
             playing={true}
             muted={true}
             width='cover'
-            height='80vh'
-            left='auto'
+            height='cover'
             />
           </div>
         
-
           <div className='container-info flex-column content-center items-start'>
             <h1 className='title'>Dragon Ball</h1>
             <span className='info'>Informações do anime</span>
@@ -56,7 +71,6 @@ function App() {
           </div>
         </section>
       </main>
-
     </div>
   );
 }
