@@ -3,7 +3,7 @@ import './styles.css';
 import { FaSearch, FaRegBell, FaPlay, FaStepBackward, FaStepForward } from "react-icons/fa";
 import ReactPlayer from 'react-player';
 import { getTopAnimes } from '../../Services/jikan';
-import Cards from '../../Components/Cards';
+import Sections from '../../Components/Sections';
 
 function App() {
   const [topAnimes, setTopAnimes] = useState([{
@@ -112,9 +112,10 @@ function App() {
 
         <section className='sections'>
           <div className="populars">
-            <h2>Populares da temporada</h2>
-            <Cards 
-            topAnimes = {topAnimes}/>
+            <Sections 
+            animes = {topAnimes}
+            sectionName = {'Top Animes da Temporada'}
+            />
           </div>
         </section>
       </main>

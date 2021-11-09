@@ -1,12 +1,18 @@
-.cardsContainer{
+.container-geral{
   width: 100vw;
-  height: 30vh;
+  height: 50vh;
+}
+
+.cardsContainer{
+  width: 85%;
+  height: 100%;
 }
 
 .cards{
-  width: 25%;
+  width: 90%;
   height: 100%;
   background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-size: contain;
+  background-repeat:no-repeat;
+  
 }

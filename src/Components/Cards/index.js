@@ -1,17 +1,19 @@
 import React from 'react';
 import './styles.css';
 
-function Cards({topAnimes}){
-  console.log(topAnimes);
-  const styles = {backgroundImage: `url(${topAnimes[0].image_url})`}
+function Cards({animes}){
+  console.log(animes);
 
   return(
     <>
-    <div className='cardsContainer flex-row'>
-      <div style={styles} className='cards'></div>  
-      <div style={styles} className='cards'></div>  
-      <div style={styles} className='cards'></div>  
-      <div style={styles} className='cards'></div>  
+    <div className='flex-row container-geral'>
+      {animes.map((anime, index) => (
+        <div className='cardsContainer'>
+          <div style={{backgroundImage: `url(${anime.image_url})`}} className='cards'></div>
+          {console.log(anime.image_url)}
+        </div>
+      ))}
+      
     </div>
     </>
   )

@@ -7,7 +7,7 @@ async function getTopAnimes(){
 
   const list = await getList.json();
   
-  for (let index = 0; index < 5; index++){
+  for (let index = 0; index < 8; index++){
     let animeID = list.top[index].mal_id;
     const getFiveAnimes = await fetch (`https://api.jikan.moe/v3/anime/${animeID}`, {
       method: 'GET',
