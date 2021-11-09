@@ -1,11 +1,14 @@
 .container-geral{
   width: 100vw;
   height: 50vh;
+  overflow-x: auto;
+
 }
 
 .cardsContainer{
-  width: 85%;
+  width: 20%;
   height: 100%;
+  flex: none;
 }
 
 .cards{
@@ -14,5 +17,4 @@
   background-position: center;
   background-size: contain;
   background-repeat:no-repeat;
-  
 }

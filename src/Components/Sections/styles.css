@@ -1,7 +1,8 @@
 .section{
   color: var(--smokeWhite);
   margin: 1% 0 0 1%;
-  width: 100vw;
+  width: 95vw;
+  
 }
 
 .section h1{
